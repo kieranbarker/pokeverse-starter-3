@@ -1,15 +1,14 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 import PokemonGrid from "./PokemonGrid.jsx";
+import { usePokemon } from "./PokemonProvider.jsx";
 import Search from "./Search.jsx";
 
-import { PokemonContext } from "../PokemonContext.js";
-
 function Pokedex() {
-  const { notInParty } = useContext(PokemonContext);
+  const { notInParty } = usePokemon();
   const [search, setSearch] = useState("");
 
   function isMatch(pokemon) {

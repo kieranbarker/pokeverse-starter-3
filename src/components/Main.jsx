@@ -1,16 +1,13 @@
-import { useContext } from "react";
-
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
 import CustomAlert from "./CustomAlert.jsx";
 import Party from "./Party.jsx";
 import Pokedex from "./Pokedex.jsx";
-
-import { PokemonContext } from "../PokemonContext.js";
+import { usePokemon } from "./PokemonProvider.jsx";
 
 function Main() {
-  const { notInParty } = useContext(PokemonContext);
+  const { notInParty } = usePokemon();
 
   return (
     <Container className="my-4">

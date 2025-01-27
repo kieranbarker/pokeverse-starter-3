@@ -1,16 +1,14 @@
-import { useContext } from "react";
-
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 
-import { PokemonContext } from "../PokemonContext.js";
+import { usePokemon } from "./PokemonProvider.jsx";
 import pokeBall from "/poke_ball.svg";
 
 const MIN_PARTY_SIZE = 2;
 
 function Header() {
-  const { inParty } = useContext(PokemonContext);
+  const { inParty } = usePokemon();
 
   return (
     <Navbar className="bg-body-tertiary">

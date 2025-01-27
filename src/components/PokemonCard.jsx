@@ -1,15 +1,13 @@
-import { useContext } from "react";
-
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-import { PokemonContext, PokemonDispatchContext } from "../PokemonContext.js";
+import { usePokemon, usePokemonDispatch } from "./PokemonProvider.jsx";
 
 const MAX_PARTY_SIZE = 6;
 
 function PokemonCard(props) {
-  const { inParty } = useContext(PokemonContext);
-  const dispatch = useContext(PokemonDispatchContext);
+  const { inParty } = usePokemon();
+  const dispatch = usePokemonDispatch();
 
   let button;
 
@@ -39,6 +37,7 @@ function PokemonCard(props) {
       <Card.Img
         variant="top"
         src={props.pokemon.sprites.front_default}
+        alt=""
         width={96}
         height={96}
         className="w-auto align-self-center"

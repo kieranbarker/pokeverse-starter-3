@@ -1,12 +1,10 @@
-import { useContext } from "react";
-
 import Row from "react-bootstrap/Row";
-import PokemonGrid from "./PokemonGrid.jsx";
 
-import { PokemonContext } from "../PokemonContext.js";
+import PokemonGrid from "./PokemonGrid.jsx";
+import { usePokemon } from "./PokemonProvider.jsx";
 
 function Party() {
-  const { inParty } = useContext(PokemonContext);
+  const { inParty } = usePokemon();
 
   return (
     <>
